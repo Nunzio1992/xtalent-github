@@ -1,0 +1,4 @@
+<label for="skill">Competenze</label>
+<select name="skill" class="form-control" id="skill" #skill (change)="updateSkill(skill)" required>
+  <option  *ngFor="let skill of skilllist | async"  value="{{skill.idSkill}}">{{skill.description}}</option>
+</select>

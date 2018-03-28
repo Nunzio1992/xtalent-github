@@ -1,0 +1,8 @@
+<label for="studyTitle">
+
+    Titolo Studio</label>
+<select select class="form-control" id="studyTitle" #studyTitle name="studyTitle" ngModel (change)="updateStudyTitle(studyTitle)"
+    required>
+    <option value="" disabled selected>Scegli un titolo di studio</option>
+    <option *ngFor="let studytitle of studytitlelist | async" value="{{studytitle.idStudy}}">{{studytitle.translatedresource.description}}</option>
+</select>

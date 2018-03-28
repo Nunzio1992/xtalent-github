@@ -1,0 +1,6 @@
+<label for="jobTitle">Posizione</label> 
+<select select name="jobTitle" class="form-control" id="jobTitle">
+                
+    <option *ngFor="let jobtitle of jobtitlelist | async" value="{{jobtitle.idJob}}"> {{jobtitle.translatedresource.description}}</option>
+
+</select>

@@ -1,0 +1,6 @@
+<label for="accountmanager">Account Manager</label>
+<select name="accountmanager" class="form-control" id="accountmanager">
+
+  <option *ngFor="let accountmanager of accountmanagerlist | async" value="{{accountmanager.idAccount}}"> {{accountmanager.name}} {{accountmanager.surname}} </option>
+
+</select>

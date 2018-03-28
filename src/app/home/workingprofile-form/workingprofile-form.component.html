@@ -1,0 +1,168 @@
+
+  <link rel="stylesheet"
+  href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+  
+  <div class="container">
+      <h1>WorkingProfile Form</h1>
+        <form>
+          <div class="form-group">
+            <label for="id">id</label>
+            <input type="text" class="form-control" id="idWP" required 
+            [(ngModel)]="worker.idProfile" name="id" (change)="output()">
+          </div>
+          <div class="form-group">
+                <label for="cognome">Cognome</label>
+                <input type="text" class="form-control" id="surname"
+                [(ngModel)]="worker.surname" name="surname">
+        </div>
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control" id="name" required
+            [(ngModel)]="worker.name" name="name">
+          </div>
+
+          <div class="form-group">
+                <job-title-list></job-title-list>
+              </div>
+
+
+
+          <div class="form-group">
+              <label for="birthdate">Anno Nascita</label>
+              <input type="text" class="form-control" id="birthdate"
+              [(ngModel)]="worker.birthdate" name="birthdate">
+          </div>
+          <div class="form-group">
+              <label for="cost">Costo</label>
+              <input type="number" class="form-control" id="cost"
+              [(ngModel)]="worker.cost" name="cost">
+          </div>
+          <div class="form-group">
+              <label for="requestCost">Richiesta</label>
+              <input type="number" class="form-control" id="requestCost"
+              [(ngModel)]="worker.requestCost" name="requestCost">
+          </div>
+
+
+          <div class="form-group">
+                <studytitlelist (idStudyUpdated)="handle($event)"> </studytitlelist>
+          </div>
+
+          
+
+
+
+          <div class="form-group">
+              <label for="nationality">Nazionalità</label>
+              <input type="text" class="form-control" id="nationality"
+              [(ngModel)]="worker.nationality" name="nationality">
+          </div>
+          <div class="form-group">
+              <label for="geolocationcity1">Città di Residenza</label>
+              <input type="text" class="form-control" id="geolocationcity1"
+              [(ngModel)]="worker.geolocationcity1" name="geolocationcity1">
+          </div>
+          <div class="form-group">
+              <label for="geolocationcity2">Città Trasferimento</label>
+              <input type="text" class="form-control" id="geolocationcity2"
+              [(ngModel)]="worker.geolocationcity2" name="geolocationcity2">
+          </div>
+          <div class="form-group">
+              <label for="lastCompanyName">Ultima Azienda</label>
+              <input type="text" class="form-control" id="lastCompanyName"
+              [(ngModel)]="worker.lastCompanyName" name="lastCompanyName">
+          </div>
+          <div >
+              <label for="isWorking">lavora</label>
+              <input type="checkbox" id="lastCompanyName"
+              [(ngModel)]="worker.isWorking" name="isWorking">
+          </div>
+          <div class="form-group">
+              <label for="avaibilityDays">GG Disp.</label>
+              <input type="number" class="form-control" id="avaibilityDays"
+              [(ngModel)]="worker.avaibilityDays" name="avaibilityDays">
+          </div>
+          <div class="form-group">
+              <label for="avaibilityDate">Prossima disponibilità</label>
+              <input type="date" class="form-control" id="avaibilityDate"
+              [(ngModel)]="worker.avaibilityDate" name="avaibilityDate">
+          </div>
+          <div class="form-group">
+                <account-manager-list> </account-manager-list>
+          </div>
+
+          
+
+          <div >
+              <label for="isHired">interno</label>
+              <input type="checkbox" id="isHired"
+              [(ngModel)]="worker.isHired" name="isHired">
+          </div>
+  
+          <div class="form-group">
+              <business-unit-list></business-unit-list>
+          </div>
+
+          <div >
+              <label for="toAllocate">Da Allocare</label>
+              <input type="checkbox" id="toAllocate"
+              [(ngModel)]="worker.toAllocate" name="toAllocate">
+          </div>
+          <div class="form-group">
+              <label for="phone">Telefono</label>
+              <input type="number" class="form-control" id="phone"
+              [(ngModel)]="worker.phone" name="phone">
+          </div>
+          <div class="form-group">
+              <label for="email">Email</label>
+              <input type="text" class="form-control" id="email"
+              [(ngModel)]="worker.email" name="email">
+          </div>
+          <div class="form-group">
+              <label for="noteAccount">Note</label>
+              <input type="text" class="form-control" id="noteAccount"
+              [(ngModel)]="worker.noteAccount" name="noteAccount">
+          </div>
+          <div class="form-group">
+              <label for="noteColloquio">Note Colloquio</label>
+              <input type="text" class="form-control" id="noteColloquio"
+              [(ngModel)]="worker.noteColloquio" name="noteColloquio">
+          </div>
+          <div class="form-group">
+              <skill-list></skill-list>
+          </div>
+  
+          <button type="submit" class="btn btn-default" (click)="output()" >Submit</button>
+        </form>
+    </div>
+  
+  
+  
+    <div> 
+        <h3>Info</h3>  
+        {{worker.idProfile}} <br>
+        {{worker.name}} <br>
+        {{worker.surname}} <br>
+        {{worker.birthdate}} <br>
+        {{worker.cost}} <br>
+        {{worker.requestCost}} <br>
+        {{worker.studytitle}} <br>
+        {{worker.jobTitle}} <br>
+        {{worker.geolocationcity1}} <br>
+        {{worker.geolocationcity2}} <br>
+        {{worker.lastCompanyName}} <br>
+        {{worker.isWorking}} <br>
+        {{worker.avaibilityDays}} <br>
+        {{worker.avaibilityDate}} <br>
+        {{worker.accountmanager}} <br>
+        {{worker.isHired}} <br>
+        {{worker.businessunit}} <br>
+        {{worker.toAllocate}} <br>
+        {{worker.phone}} <br>
+        {{worker.email}} <br>
+        {{worker.noteAccount}} <br>
+        {{worker.noteColloquio}} <br>
+        {{worker.skillassociations}} <br>
+        </div>
+  
+  

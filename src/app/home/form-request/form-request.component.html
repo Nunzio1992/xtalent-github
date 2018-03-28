@@ -1,0 +1,104 @@
+<div class="container container-login">
+  <h4>Richiesta recruiting</h4>
+  <ul materialize="collapsible" class="collapsible">
+      <li>
+          <div class="collapsible-header">
+              <i class="material-icons">thumb_up</i>Cliente</div>
+          <div class="collapsible-body">
+              <div class="input-field col s6">
+                  <input id="client" type="text" class="validate" [(ngModel)]="request.clientContractual">
+                  <label for="client">Cliente contrattuale</label>
+              </div>
+              <div class="input-field col s6">
+                  <input [(ngModel)]="request.clientCompany" id="final-client" type="text" class="validate">
+                  <label for="final-client">Cliente finale</label>
+              </div>
+              <div class="input-field col s6">
+                  <input [(ngModel)]="request.activityOffice" id="activity-place" type="text" class="validate">
+                  <label for="activity-place">Sede attività</label>
+              </div>
+          </div>
+      </li>
+      <li>
+          <div class="collapsible-header">
+              <i class="material-icons">schedule</i>Timing</div>
+          <div class="collapsible-body">
+              <div class="input-field col s6">
+                  <input [(ngModel)]="request.dateRequest" type="date" class="datepicker">
+                  <label for="date">Data evasione</label>
+              </div>
+              <div class="input-field col s6">
+                  <input [(ngModel)]="request.initDate" type="date" class="datepicker">
+                  <label for="date-start">Inizio attività</label>
+              </div>
+              <div class="input-field col s6">
+                  <input [(ngModel)]="request.endDate" type="date" class="datepicker">
+                  <label for="date-finish">Fine attività</label>
+              </div>
+          </div>
+      </li>
+      <li *ngFor="let element of requestskills">
+        <div class="collapsible-header">
+            <i class="material-icons">person</i>Profilo</div>
+        <div class="collapsible-body">
+            <div class="input-field col s6">
+                <input [(ngModel)]="element.jobtitle" id="professional-profile" type="text" class="validate">
+                <label for="professional-profile">Profilo professionale</label>
+            </div>
+            <div class="input-field col s6">
+                <input [(ngModel)]="element.seniority" id="seniority" type="text" class="validate">
+                <label for="seniority">Seniority</label>
+            </div>
+            <div class="input-field col s6">
+                <input [(ngModel)]="element.skills" id="skills" type="text" class="validate">
+                <label for="skills">Skills</label>
+            </div>
+            <div class="input-field col s6">
+                <input [(ngModel)]="element.cost" id="pricemin" type="text" class="validate">
+                <label for="price">Tariffa min</label>
+            </div>
+            <div class="input-field col s6">
+                <input [(ngModel)]="element.costmax" id="pricemax" type="text" class="validate">
+                <label for="price">Tariffa max</label>
+            </div>
+        </div>
+      </li>
+     <li>
+          <div class="collapsible-header">
+              <i class="material-icons">person_add</i>Quantità</div>
+          <div class="collapsible-body">
+              <div class="input-field col s6">
+                  <input [(ngModel)]="request.resourceNumber" id="quantity" type="text" class="validate">
+                  <label for="quantity">Numero risorse</label>
+              </div>
+          </div>
+      </li>
+      <li>
+          <div class="collapsible-header">
+              <i class="material-icons">find_in_page</i>Specifiche</div>
+          <div class="collapsible-body">
+              <div class="input-field col s6">
+                  <input [(ngModel)]="request.noteSpec" id="specify" type="text" class="validate">
+                  <label for="specify">Vincoli</label>
+              </div>
+          </div>
+      </li>
+      <li>
+          <div class="collapsible-header">
+              <i class="material-icons">edit</i>Note</div>
+          <div class="collapsible-body">
+              <div class="input-field col s6">
+                  <i class="material-icons prefix">mode_edit</i>
+                  <textarea [(ngModel)]="request.noteAccount" id="icon_prefix2" class="materialize-textarea"></textarea>
+                  <label for="icon_prefix2">Note</label>
+              </div>
+          </div>
+      </li>
+  </ul>
+  <div class="insert-btn col s12">
+      <button class="col s6 btn waves-effect waves-light" type="button" (click)="save()" name="action">Richiedi</button>
+      <button class="col s6 waves-effect waves-light btn btn-reset">Reset</button>
+  </div>
+  <input type="hidden" (ngModel)="accountmanager.idAccount" value="1">
+  <input type="hidden" (ngModel)="requeststatus.idStatus" value="1">
+</div>

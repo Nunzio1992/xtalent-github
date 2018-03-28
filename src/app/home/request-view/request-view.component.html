@@ -1,0 +1,92 @@
+
+<html>
+
+    <head>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    
+    
+    <body>
+        
+
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a><br>
+      <a routerLink="/form-request">Nuova Richiesta</a>
+    
+    </div>
+    <button type="button" (click)="openNav()" class="btn btn-primary"> &#9776; </button>
+    
+    <div id="main">
+
+          
+            <table class="table col-xs-12">
+              <thead>
+                <tr>
+                  <th>Cliente Contrattuale</th>
+                  <th>Cliente Finale</th>
+                  <th>Sede Attività</th>
+                  <th>Data Evasione</th>
+                  <th>Inizio Attività</th>
+                  <th>Fine Attività</th>
+                  <th>Profilo Professionale</th>
+                  <th>Seniority</th>
+                  <th>Skills</th>
+                  <th>Tariffa Min</th>
+                  <th>Tariffa Max</th>
+                  <th>Quantità</th>
+                  <th>Vincoli</th>
+                  <th>Note</th>
+                  <th>Stato</th>
+          
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let request of requestlist | async" >
+                  <th>{{request.clientContractual}}</th>
+                  <th>{{request.clientCompany}}</th>
+                  <th>{{request.activityOffice}}</th>
+                  <th>{{request.dateRequest}}</th>
+                  <th>{{request.initDate}}</th>
+                  <th>{{request.endDate}}</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th>{{request.resourceNumber}}</th>
+                  <th>{{request.noteSpec}}</th>
+                  <th>{{request.noteAccount}}</th>
+                  <th>{{request.requeststatus.description}}</th>
+           </tr>
+              </tbody>
+            </table>
+          </div>
+          
+  
+          
+          <!-- <th *ngFor="let element of request.requestskills">
+              {{element.jobtitle}}
+          </th>
+          <th *ngFor="let element of request.requestskills">
+              {{element.seniority}}
+          </th>
+          <th *ngFor="let element of request.requestskills">
+              {{element.skills}}
+          </th>
+          <th *ngFor="let element of request.requestskills">
+              {{element.cost}}
+          </th>
+          <th *ngFor="let element of request.requestskills">
+              {{element.costmax}}
+          </th> -->
+
+    
+    
+    </body>
+    
+    </html>
